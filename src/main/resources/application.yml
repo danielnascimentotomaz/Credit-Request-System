@@ -1,0 +1,28 @@
+spring:
+  # Configuracao para ter acesso ao banco de dado pelo console
+  h2:
+    console:
+      enabled: true # Esta configuracao indica que o console H2 esta habilitado e pode ser acessado.
+      path: /h2-console # especifica o caminho da URL onde console H2 estara disponivel
+
+      settings:
+        trace: false # modo rastreamento e desabilitado
+        web-allow-others: false # Essa configuracao permite conexao remota
+
+
+  # Fazer a conexao com banco de dado(O h2 ja faz a conexao automaticamente mais redolve coloca para muda username e password
+  datasource:
+    url: jdbc:h2:mem:credit-request_system_db # Este é o URL JDBC para conexão com o banco de dados H2.credit-request_system_db nome do banco
+    driver-class-name: org.h2.Driver # Este é o nome de classe totalmente qualificado do driver JDBC para o banco de dados H2.
+    username: daniel # Este é o nome de usuário usado para autenticar com o banco de dados H2
+    password: # Esta é a senha usada para autenticar com o banco de dados H2
+
+  # Para criar as tabela banco de dado podia usar JPA mais nesse projeto o usar flaway
+  #jpa:
+   # hibernate:
+    #  ddl-auto: auto
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
